@@ -1,0 +1,50 @@
+Client
+======
+
+Client takes the input from the user like "nslookup abc.com"
+Client sends the input to the local server.
+Client gets the IP Address and displays  it to the user.
+If given hostname is not present local server returns error message
+
+
+local Server
+=============
+
+gets the input from the client.
+sends the IP address to client if it is present in its cache.
+if it is not present in its cache then it splits the hostname from right to left and send the input to the root server.
+root server responds with the corresponding tld servers IP address and portno.
+now it again splits the hostname from right to left and send the input to the tld server
+then it contacts the corresponding tld server for the corresponding authoritative server ip address.
+Finally it sends the query to the authoritative server and gets the corresponding IP address.
+Local server stores the IP address for the hostname and the hostname in its cache and sends it to the client.
+
+
+Root Server
+===========
+The top level heirarchy of the query chain.
+local server contacts the root server for the hostname.
+sends the ip address and port number for the corresponding tld servers.
+
+TLD server
+==========
+
+Local server contacts the TLD server upon receiving the IP address from the Root server.
+The Tld server takes the input from the local server and sends the corresponding IP address for the responsible authoritative servers.
+sends the IP address and port number of authoritative server to localserver
+
+
+Authoritative Server
+====================
+
+The most important one in the network of WWW.
+it acts as a guard protecting the IP address of the hosts and server.
+when the local server gets the IP address of the authoritative server from the tld server it sends the one of the available IP address for controlling the network traffic.
+sends the IP address to the local server for the requested host name
+
+=============================
+Local server maintains its cache.
+before sending the Ip address to the client it stores the hostname and ip addresss in its cache.
+when a query comes for the local server it first checks in its cache.
+
+

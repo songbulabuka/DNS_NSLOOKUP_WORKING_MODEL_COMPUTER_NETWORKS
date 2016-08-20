@@ -1,0 +1,4 @@
+www.amazon.com 127.0.0.20 6000
+www.sales.amazon.com 127.0.0.21 6002
+employees.amazon.com 127.0.0.27 6004
+branches.amazon.com 127.0.0.28 6006

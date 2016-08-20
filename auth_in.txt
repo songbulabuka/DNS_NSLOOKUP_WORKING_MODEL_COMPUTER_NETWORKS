@@ -1,0 +1,2 @@
+www.amazon.in 127.0.0.14 1223
+www.sales.amazon.in 127.0.0.43 1228
